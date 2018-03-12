@@ -3,6 +3,7 @@ package com.mobilemonkeysoftware.daggertestingsample.di
 import android.content.Context
 import com.mobilemonkeysoftware.api.ApiModule
 import com.mobilemonkeysoftware.daggertestingsample.MainApplication
+import com.mobilemonkeysoftware.ui.UiContractModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -17,7 +18,8 @@ import javax.inject.Singleton
             AndroidInjectionModule::class,
             ActivityBindingModule::class,
             ApplicationModule::class,
-            ApiModule::class
+            ApiModule::class,
+            UiContractModule::class
         ]
 )
 interface ApplicationComponent {

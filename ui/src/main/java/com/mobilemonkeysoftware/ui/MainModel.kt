@@ -1,14 +1,13 @@
-package com.mobilemonkeysoftware.daggertestingsample.ui.main
+package com.mobilemonkeysoftware.ui
 
 import com.mobilemonkeysoftware.api.GithubApi
 import hu.akarnokd.rxjava2.math.MathObservable
 import io.reactivex.Observable
-import javax.inject.Inject
 
 /**
  * Created by AR on 10/03/2018.
  */
-class MainModel @Inject constructor(
+class MainModel(
         private val githubApi: GithubApi
 ) {
 

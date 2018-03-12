@@ -1,4 +1,4 @@
-package com.mobilemonkeysoftware.daggertestingsample.ui.main
+package com.mobilemonkeysoftware.ui
 
 import com.mobilemonkeysoftware.api.GithubApi
 

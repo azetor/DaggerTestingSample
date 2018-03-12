@@ -3,6 +3,8 @@ package com.mobilemonkeysoftware.daggertestingsample.ui.main
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.mobilemonkeysoftware.daggertestingsample.R
+import com.mobilemonkeysoftware.ui.MainPresenter
+import com.mobilemonkeysoftware.ui.MainView
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject

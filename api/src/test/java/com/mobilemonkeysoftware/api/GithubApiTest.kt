@@ -18,7 +18,7 @@ import org.junit.Test
 class GithubApiTest {
 
     @get:Rule
-    val rule = daggerMockRule()
+    internal val rule = daggerMockRule()
 
     @InjectFromComponent(TestApp::class)
     lateinit var api: GithubApi
@@ -55,7 +55,7 @@ class GithubApiTest {
     @Test
     fun testNoValues() {
 
-        var apiMock: GithubApi = mock() // PRO TIP
+        val apiMock: GithubApi = mock() // PRO TIP
         val emptyListObservable: Observable<List<GithubApi.Gist>> = Observable.empty()
 
 //        doReturn(emptyListObservable).`when`(apiMock).getPublicGistOk()

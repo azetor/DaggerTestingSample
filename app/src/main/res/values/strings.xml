@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">DaggerTestingSample</string>
-    <string name="loading">LOADING…</string>
-    <string name="loaded">LOADED</string>
 </resources>

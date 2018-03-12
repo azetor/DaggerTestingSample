@@ -1,0 +1,4 @@
+<resources>
+    <string name="loading">LOADING…</string>
+    <string name="loaded">LOADED</string>
+</resources>

@@ -1,20 +1,18 @@
-package com.mobilemonkeysoftware.daggertestingsample.ui.main
+package com.mobilemonkeysoftware.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.mobilemonkeysoftware.daggertestingsample.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 
 /**
  * Created by AR on 10/03/2018.
  */
-class MainPresenter @Inject constructor(
+class MainPresenter(
         private val model: MainModel,
         private val context: Context
 ) {
@@ -22,6 +20,8 @@ class MainPresenter @Inject constructor(
     private lateinit var view: MainView
 
     private var disposable: Disposable? = null
+
+//    internal var currentGist: Gist? = null
 
     fun init(view: MainView) {
         this.view = view
@@ -31,6 +31,7 @@ class MainPresenter @Inject constructor(
             "\nid=${this.id}," +
             "\ndescription=${this.description}," +
             "\ncomments=${this.comments}," +
+//            "\nuser=${this.user}," + // TODO test
             "\nurl=${this.url}," +
             "\nforksUrl=${this.forksUrl}," +
             "\ncommitsUrl=${this.commitsUrl}," +
@@ -51,7 +52,10 @@ class MainPresenter @Inject constructor(
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
-                        onNext = { view.show(it.formatted()) },
+                        onNext = {
+//                            currentGist = it
+                            view.show(it.formatted())
+                        },
                         onComplete = { Toast.makeText(context, R.string.loaded, Toast.LENGTH_LONG).show() },
                         onError = { Log.e("MAIN_PRESENTER", "Get last gits error", it) })
     }

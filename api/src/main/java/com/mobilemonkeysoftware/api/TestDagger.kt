@@ -7,7 +7,7 @@ import javax.inject.Singleton
 /**
  * Created by AR on 11/03/2018.
  */
-class TestApp {
+internal class TestApp {
 
     @Inject
     lateinit var githubApi: GithubApi
@@ -19,7 +19,7 @@ class TestApp {
             ApiModule::class
         ]
 )
-interface TestComponent {
+internal interface TestComponent {
 
     fun inject(app: TestApp)
 }
